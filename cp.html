@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competitive Programming - Fahad's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+    .cp-container {
+        max-width: 1100px;
+        margin: 48px auto;
+        padding: 0 20px;
+    }
+    .contest-card {
+        display: flex;
+        align-items: stretch;
+        background: #181818;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(255,109,0,0.10);
+        margin-bottom: 56px;
+        overflow: hidden;
+        min-height: 320px;
+    }
+    .contest-card.reverse {
+        flex-direction: row-reverse;
+    }
+    .team-photo-section {
+        flex: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #222;
+        min-width: 400px;
+    }
+    .team-photo-section img {
+        width: 98%;
+        max-width: 540px;
+        height: 290px;
+        object-fit: cover;
+        border-radius: 16px;
+        border: 3px solid #ff9100;
+        background: #222;
+        box-shadow: 0 2px 12px 0 rgba(255,109,0,0.10);
+    }
+    .contest-details {
+        flex: 1.2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 32px 40px 32px;
+    }
+    .contest-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        background: linear-gradient(90deg, #ff9100, #ff6d00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .contest-meta, .team-name, .rank-row {
+        font-size: 1.08rem;
+        margin-bottom: 6px;
+        background: linear-gradient(90deg, #fff, #e0e0e0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #fff; /* fallback */
+    }
+    .team-name {
+        font-weight: 600;
+    }
+    .standing-row {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        gap: 18px;
+    }
+    .standing-btn {
+        display: inline-block;
+        background: linear-gradient(90deg, #ff9100, #ff6d00);
+        color: #181818;
+        font-weight: 700;
+        border: none;
+        border-radius: 20px;
+        padding: 8px 22px;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        box-shadow: 0 2px 8px 0 rgba(255,109,0,0.10);
+    }
+    .standing-btn:hover {
+        background: linear-gradient(90deg, #ff6d00, #ff9100);
+        color: #fff;
+        transform: translateY(-2px) scale(1.05);
+    }
+    @media (max-width: 900px) {
+        .contest-card, .contest-card.reverse {
+            flex-direction: column;
+            min-height: unset;
+        }
+        .team-photo-section, .contest-details {
+            width: 100%;
+            min-width: unset;
+            padding: 24px 8px;
+        }
+        .team-photo-section img {
+            width: 100%;
+            height: 200px;
+            max-width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="cp.html">Competitive Programming</a></li>
+            <li><a href="activities.html" class="active">Extra Curricular Activities</a></li>
+            <li><a href="contact.html">Contacts</a></li>
+        </ul>
+    </nav>
+    <main class="cp-container">
+        <h1 class="name" style="text-align: center;">Competitive Programming</h1>
+
+        <!-- Contest 1: Photo Left, Info Right -->
+        <div class="contest-card">
+            <div class="team-photo-section">
+                <img src="DIU_ICPC.jpg" alt="Team BUET_FahadCoders">
+            </div>
+            <div class="contest-details">
+                <div class="contest-title">ICPC Asia Dhaka Regional 2023</div>
+                <div class="contest-meta">Arranging University: DU</div>
+                <div class="contest-meta">Team: DU_FahadWarriors</div>
+                <div class="rank-row">Rank: 12th Place</div>
+                <div class="standing-row">
+                    <a href="https://example.com/standing" target="_blank" class="standing-btn">View Standing</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contest 2: Photo Right, Info Left -->
+        <div class="contest-card reverse">
+            <div class="team-photo-section">
+                <img src="team_photo2.jpg" alt="Team DU_FahadWarriors">
+            </div>
+            <div class="contest-details">
+                <div class="contest-title">National Collegiate Programming Contest 2022</div>
+                <div class="contest-meta">Arranging University: DU</div>
+                <div class="contest-meta">Team: DU_FahadWarriors</div>
+                <div class="rank-row">Rank: 12th Place</div>
+                <div class="standing-row">
+                    <a href="https://example.com/standing2" target="_blank" class="standing-btn">View Standing</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more contest-card blocks, alternating .reverse class -->
+
+    </main>
+</body>
+</html>
