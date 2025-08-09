@@ -214,8 +214,8 @@ body {
   height: auto;
   max-width: 440px;
   max-height: 440px;
-  top: -60px;
-  left: -50px;
+  top: 00px;
+  left: -90px;
   object-fit: contain;
   z-index: 2;
   background: none;
