@@ -1,135 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Competitive Programming - Fahad's Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <style>
-    .cp-container {
-        max-width: 1100px;
-        margin: 48px auto;
-        padding: 0 20px;
-    }
-    .contest-card {
-        display: flex;
-        align-items: stretch;
-        background: #181818;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px 0 rgba(255,109,0,0.10);
-        margin-bottom: 56px;
-        overflow: hidden;
-        min-height: 320px;
-    }
-    .contest-card.reverse {
-        flex-direction: row-reverse;
-    }
-    .team-photo-section {
-        flex: 2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: #222;
-        min-width: 400px;
-    }
-    .team-photo-section img {
-        width: 98%;
-        max-width: 540px;
-        height: 290px;
-        object-fit: cover;
-        border-radius: 16px;
-        border: 3px solid #ff9100;
-        background: #222;
-        box-shadow: 0 2px 12px 0 rgba(255,109,0,0.10);
-    }
-    .contest-details {
-        flex: 1.2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 32px 40px 32px;
-    }
-    .contest-title {
-        font-size: 1.35rem;
-        font-weight: 700;
-        margin: 0 0 10px 0;
-        background: linear-gradient(90deg, #ff9100, #ff6d00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .contest-meta, .team-name, .rank-row {
-        font-size: 1.08rem;
-        margin-bottom: 6px;
-        background: linear-gradient(90deg, #fff, #e0e0e0);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: #fff; /* fallback */
-    }
-    .team-name {
-        font-weight: 600;
-    }
-    .standing-row {
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-        gap: 18px;
-    }
-    .standing-btn {
-        display: inline-block;
-        background: linear-gradient(90deg, #ff9100, #ff6d00);
-        color: #181818;
-        font-weight: 700;
-        border: none;
-        border-radius: 20px;
-        padding: 8px 22px;
-        font-size: 1rem;
-        text-decoration: none;
-        transition: background 0.2s, color 0.2s, transform 0.2s;
-        box-shadow: 0 2px 8px 0 rgba(255,109,0,0.10);
-    }
-    .standing-btn:hover {
-        background: linear-gradient(90deg, #ff6d00, #ff9100);
-        color: #fff;
-        transform: translateY(-2px) scale(1.05);
-    }
-    @media (max-width: 900px) {
-        .contest-card, .contest-card.reverse {
-            flex-direction: column;
-            min-height: unset;
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: #111;
+            color: #f5f5f5;
         }
-        .team-photo-section, .contest-details {
+
+        /* Navbar Styles */
+        nav.navbar {
             width: 100%;
-            min-width: unset;
-            padding: 24px 8px;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            padding: 32px 0 16px;
+            height: 80px; /* fixed height to accommodate scaling */
+            overflow: visible;
+        }
+
+        .navbar-wrapper {
+            transform-origin: top center;
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-wrapper ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-wrapper a {
+            color: #f5f5f5;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            position: relative;
+        }
+        .navbar-wrapper a.active,
+        .navbar-wrapper a:hover {
+            color: #ff9100;
+        }
+        .navbar-wrapper a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff9100, #ff6d00);
+            transition: width 0.3s;
+            margin: 0 auto;
+        }
+        .navbar-wrapper a:hover::after,
+        .navbar-wrapper a.active::after {
+            width: 100%;
+        }
+
+        /* Zoom out navbar on smaller screens */
+        @media (max-width: 900px) {
+            .navbar-wrapper {
+                transform: scale(0.65);
+            }
+            nav.navbar {
+                height: 52px; /* 80 * 0.65 */
+                padding: 20px 0 12px;
+            }
+        }
+        @media (max-width: 500px) {
+            .navbar-wrapper {
+                transform: scale(0.45);
+            }
+            nav.navbar {
+                height: 36px; /* 80 * 0.45 */
+                padding: 14px 0 8px;
+            }
+        }
+
+
+        /* Main container */
+        .cp-container {
+            max-width: 1100px;
+            margin: 48px auto;
+            padding: 0 20px;
+        }
+
+        /* Contest card */
+        .contest-card {
+            display: flex;
+            align-items: stretch;
+            background: #181818;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px 0 rgba(255,109,0,0.10);
+            margin-bottom: 56px;
+            overflow: hidden;
+            min-height: 320px;
+        }
+        .contest-card.reverse {
+            flex-direction: row-reverse;
+        }
+
+        /* Team photo section */
+        .team-photo-section {
+            flex: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #222;
+            min-width: 400px;
         }
         .team-photo-section img {
-            width: 100%;
-            height: 200px;
-            max-width: 100%;
+            width: 98%;
+            max-width: 540px;
+            height: 290px;
+            object-fit: cover;
+            border-radius: 16px;
+            border: 3px solid #ff9100;
+            background: #222;
+            box-shadow: 0 2px 12px 0 rgba(255,109,0,0.10);
         }
-    }
+
+        /* Contest details */
+        .contest-details {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 32px 40px 32px;
+        }
+        .contest-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            background: linear-gradient(90deg, #ff9100, #ff6d00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .contest-meta, .team-name, .rank-row {
+            font-size: 1.08rem;
+            margin-bottom: 6px;
+            background: linear-gradient(90deg, #fff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #fff; /* fallback */
+        }
+        .team-name {
+            font-weight: 600;
+        }
+
+        /* Standing row and button */
+        .standing-row {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            gap: 18px;
+        }
+        .standing-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff9100, #ff6d00);
+            color: #181818;
+            font-weight: 700;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 22px;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            box-shadow: 0 2px 8px 0 rgba(255,109,0,0.10);
+        }
+        .standing-btn:hover {
+            background: linear-gradient(90deg, #ff6d00, #ff9100);
+            color: #fff;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        /* Responsive for contest cards */
+        @media (max-width: 900px) {
+            .contest-card, .contest-card.reverse {
+                flex-direction: column;
+                min-height: unset;
+            }
+            .team-photo-section, .contest-details {
+                width: 100%;
+                min-width: unset;
+                padding: 24px 8px;
+            }
+            .team-photo-section img {
+                width: 100%;
+                height: 200px;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="cp.html">Competitive Programming</a></li>
-            <li><a href="activities.html" class="active">Extra Curricular Activities</a></li>
-            <li><a href="contact.html">Contacts</a></li>
-        </ul>
+        <div class="navbar-wrapper">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="cp.html">Competitive Programming</a></li>
+                <li><a href="activities.html">Extra Curricular Activities</a></li>
+                <li><a href="contact.html">Contacts</a></li>
+            </ul>
+        </div>
     </nav>
+
     <main class="cp-container">
         <h1 class="name" style="text-align: center;">Competitive Programming</h1>
 
         <!-- Contest 1: Photo Left, Info Right -->
         <div class="contest-card">
             <div class="team-photo-section">
-                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23.jpeg" alt="contest photo">
+                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23.jpeg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">Uttara University Inter-University Programming Contest 2025</div>
@@ -146,7 +244,7 @@
         <!-- Contest 2: Photo Right, Info Left -->
         <div class="contest-card reverse">
             <div class="team-photo-section">
-                <img src="contest_images/495221989_1112030074284306_2653751602748714334_n.jpg" alt="contest photo">
+                <img src="contest_images/495221989_1112030074284306_2653751602748714334_n.jpg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">Battle of Intellects - Spring 2025 - IUBAT</div>
@@ -163,7 +261,7 @@
         <!-- Contest 3: Photo Left, Info Right -->
         <div class="contest-card">
             <div class="team-photo-section">
-                <img src="contest_images/497571168_1924715641605484_6583068761751366662_n.jpg" alt="contest photo">
+                <img src="contest_images/497571168_1924715641605484_6583068761751366662_n.jpg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">DUET Inter-University Programming Contest 2025</div>
@@ -180,7 +278,7 @@
         <!-- Contest 4: Photo Right, Info Left -->
         <div class="contest-card reverse">
             <div class="team-photo-section">
-                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.24 (1).jpeg" alt="contest photo">
+                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.24 (1).jpeg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">MIAKI Presents KUET IUPC 2025</div>
@@ -197,7 +295,7 @@
         <!-- Contest 5: Photo Left, Info Right -->
         <div class="contest-card">
             <div class="team-photo-section">
-                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23 (2).jpeg" alt="contest photo">
+                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23 (2).jpeg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">ICPC Asia Dhaka Regional Contest 2024</div>
@@ -214,7 +312,7 @@
         <!-- Contest 6: Photo Right, Info Left -->
         <div class="contest-card reverse">
             <div class="team-photo-section">
-                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23 (1).jpeg" alt="contest photo">
+                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.23 (1).jpeg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">NCPC - National Collegiate Programming Contest 2023</div>
@@ -231,7 +329,7 @@
         <!-- Contest 7: Photo Left, Info Right -->
         <div class="contest-card">
             <div class="team-photo-section">
-                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.24.jpeg" alt="contest photo">
+                <img src="contest_images/WhatsApp Image 2025-08-08 at 23.09.24.jpeg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">UAP Inter University Collaborative Programming Contest 1.0 (Junior)</div>
@@ -248,39 +346,19 @@
         <!-- Contest 8: Photo Right, Info Left -->
         <div class="contest-card reverse">
             <div class="team-photo-section">
-                <img src="contest_images/484190787_1872337333509982_4966786252208294972_n.jpg" alt="contest photo">
+                <img src="contest_images/484190787_1872337333509982_4966786252208294972_n.jpg" alt="contest photo" />
             </div>
             <div class="contest-details">
                 <div class="contest-title">IUBAT Monthly Programming Contest</div>
                 <div class="contest-meta">Arranging University: IUBAT</div>
-                <!-- <div class="contest-meta">Team: IUBAT_Tanvirians</div> -->
-                <div class="contest-meta">Date: September 2023</div>
+                <div class="contest-meta">Team: IUBAT_LivingThings</div>
+                <div class="contest-meta">Date: October 2023</div>
                 <div class="rank-row">Rank: 1st Place</div>
                 <div class="standing-row">
-                    <a href="https://toph.co/contests/training/auynaxz/standings" target="_blank" class="standing-btn">View Standing</a>
+                    <a href="https://toph.co/contests/tyju5qq/standings" target="_blank" class="standing-btn">View Standing</a>
                 </div>
             </div>
         </div>
-
-        <!-- Contest 9: Photo Left, Info Right -->
-        <div class="contest-card">
-            <div class="team-photo-section">
-                <img src="IUBAT_CPC_2023.jpg" alt="contest photo">
-            </div>
-            <div class="contest-details">
-                <div class="contest-title">Collaborative Programming Contest (IUBAT)</div>
-                <div class="contest-meta">Arranging University: IUBAT</div>
-                <div class="contest-meta">Team: IUBAT_Octopus</div>
-                <div class="contest-meta">Date: July 2023</div>
-                <div class="rank-row">Rank: 20th Place</div>
-                <div class="standing-row">
-                    <a href="https://toph.co/contests/training/b3lljkz/standings" target="_blank" class="standing-btn">View Standing</a>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Add more contest-card blocks, alternating .reverse class -->
 
     </main>
 </body>

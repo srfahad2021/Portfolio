@@ -1,243 +1,244 @@
+/* === Base Styles === */
+
 body {
-    background: #111;
-    color: #f5f5f5;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    min-height: 100vh;
+  background: #111;
+  color: #f5f5f5;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  min-height: 100vh;
 }
 
 .navbar {
-    width: 100%;
-    padding: 32px 0 16px 0;
-    background: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  padding: 32px 0 16px 0;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: #f5f5f5;
-    font-weight: 700;
-    font-size: 1.1rem;
-    transition: color 0.2s;
-    position: relative;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  position: relative;
 }
 
 .navbar a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #ff9100, #ff6d00);
-    transition: width 0.3s;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff9100, #ff6d00);
+  transition: width 0.3s;
+  margin: 0 auto;
 }
 
 .navbar a:hover {
-    color: #ff9100;
+  color: #ff9100;
 }
 
 .navbar a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-    gap: 60px;
-    padding: 0 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  gap: 60px;
+  padding: 0 5vw;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 450px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 450px;
 }
 
 .name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ff9100, #ff6d00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 6px; /* reduced from 18px */
-    margin-top: 6px;    /* add this to reduce space above if needed */
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff9100, #ff6d00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 .subtitle {
-    font-size: 1.4rem;
-    font-weight: 500;
-    background: linear-gradient(90deg, #dadada, #919191);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 2px; /* add or reduce as needed */
-    margin-top: 2px;    /* add or reduce as needed */
+  font-size: 1.4rem;
+  font-weight: 500;
+  background: linear-gradient(90deg, #dadada, #919191);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2px;
+  margin-top: 2px;
 }
 
 .social-icons {
-    display: flex;
-    gap: 18px;
-    margin: 18px 0;
+  display: flex;
+  gap: 18px;
+  margin: 18px 0;
 }
 
 .social-icons a {
-    color: #f5f5f5;
-    font-size: 1.35rem;
-    transition: color 0.2s, transform 0.2s;
-    margin: 0 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
+  color: #f5f5f5;
+  font-size: 1.35rem;
+  transition: color 0.2s, transform 0.2s;
+  margin: 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
 }
 
 .social-icons a:hover {
-    color: #ff9100;
-    background: rgba(255,145,0,0.08);
-    transform: scale(1.13);
+  color: #ff9100;
+  background: rgba(255,145,0,0.08);
+  transform: scale(1.13);
 }
 
 .cv-btn {
-    display: inline-block;
-    margin-bottom: 28px;
-    padding: 12px 32px;
-    background: linear-gradient(90deg, #ff9100, #ff6d00);
-    color: #111;
-    font-weight: 700;
-    border: none;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    box-shadow: 0 4px 24px 0 rgba(255,109,0,0.15);
-    transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: inline-block;
+  margin-bottom: 28px;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #ff9100, #ff6d00);
+  color: #111;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 24px 0 rgba(255,109,0,0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
 .cv-btn:hover {
-    background: linear-gradient(90deg, #ff6d00, #ff9100);
-    color: #fff;
-    transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(90deg, #ff6d00, #ff9100);
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
 }
 
 .stats-card {
-    display: flex;
-    align-items: center;
-    background: #181818;
-    border-radius: 7px;
-    /* box-shadow: 0 2px 16px 0 rgba(255,109,0,0.08); */
-    padding: 18px 0;
-    width: 100%;
-    margin-top: 10px;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background: #181818;
+  border-radius: 7px;
+  padding: 18px 0;
+  width: 100%;
+  margin-top: 10px;
+  justify-content: space-between;
 }
 
 .stat {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ff9100;
-    display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff9100;
+  display: block;
 }
 
 .stat-label {
-    font-size: 1rem;
-    color: #f5f5f5;
-    opacity: 0.8;
+  font-size: 1rem;
+  color: #f5f5f5;
+  opacity: 0.8;
 }
 
 .divider {
-    width: 2px;
-    height: 48px;
-    background: linear-gradient(180deg, #ff9100, #ff6d00);
-    border-radius: 1px;
-    margin: 0 10px;
+  width: 2px;
+  height: 48px;
+  background: linear-gradient(180deg, #ff9100, #ff6d00);
+  border-radius: 1px;
+  margin: 0 10px;
 }
 
 .right {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100;
-    height: auto;
-    background: none;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin-top: -30px;
 }
 
 .circle-bg {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(30,30,30,0.7) 80%, transparent 100%);
-    border-radius: 50%;
-    left: 22px;   /* Adjust to move the circle horizontally */
-    top: 50px;   /* Adjust to move the circle vertically */
-    z-index: 1;
-    filter: blur(1px);
-    opacity: 0.85;
-    pointer-events: none;
-    transition: all 0.3s;
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(30,30,30,0.7) 80%, transparent 100%);
+  border-radius: 50%;
+  left: 8px;
+  top: 80px;
+  z-index: 1;
+  filter: blur(1px);
+  opacity: 0.85;
+  pointer-events: none;
+  transition: all 0.3s;
 }
 
 .profile-photo {
-    position: relative;
-    width: auto;
-    height: auto;
-    max-width: 340px;
-    max-height: 340px;
-    object-fit: contain;
-    z-index: 2;
-    background: none;
-    box-shadow: none;
-    border: none;
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 440px;
+  max-height: 440px;
+  top: -60px;
+  left: -50px;
+  object-fit: contain;
+  z-index: 2;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* === New: Zoom out entire page on smaller screens === */
+
+.page-wrapper {
+  width: 100vw;
+  transform-origin: top center;
+  transition: transform 0.3s ease;
 }
 
 @media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 2vw;
-    }
-    .left, .right {
-        max-width: 100%;
-        width: 100%;
-        align-items: center;
-    }
-    .photo-wrapper {
-        width: 220px;
-        height: 220px;
-    }
-    .circle-bg {
-        width: 160px;
-        height: 160px;
-    }
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-    }
+  .page-wrapper {
+    transform: scale(0.65);
+  }
+}
+
+@media (max-width: 500px) {
+  .page-wrapper {
+    transform: scale(0.45);
+  }
 }
